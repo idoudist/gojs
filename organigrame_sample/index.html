@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <meta name="description" content="An organization chart editor -- edit details and change relationships." />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Copyright 1998-2021 by Northwoods Software Corporation. -->
+    <title>Org Chart Editor</title>
+</head>
+
+<body>
+    <!-- This top nav is not part of the sample code -->
+
+    <div class="md:flex flex-col md:flex-row md:min-h-screen w-full max-w-screen-xl mx-auto">
+        <!-- * * * * * * * * * * * * * -->
+        <!-- Start of GoJS sample code -->
+
+        <script src="assets/js/go.js"></script>
+        <div class="p-4 w-full">
+            <link rel="stylesheet" href="assets/css/DataInspector.css" />
+            <script src="assets/js/DataInspector.js"></script>
+
+            <script id="code" src="organigrame.js"></script>
+
+            <div id="sample">
+                <div id="myDiagramDiv" style="
+              background-color: #34343c;
+              border: solid 1px black;
+              height: 570px;"></div>
+                <p>
+                    <button id="zoomToFit">Zoom to Fit</button>
+                    <button id="centerRoot">Center on root</button>
+                </p>
+
+                <div>
+                    <div id="myInspector"></div>
+                </div>
+                <div>
+                    <div>
+                        <button id="SaveButton" onclick="save()">Save</button>
+                        <button onclick="load()">Load</button>
+                        Diagram Model saved in JSON format:
+                    </div>
+                    <textarea id="mySavedModel" style="width: 100%; height: 270px">
+{ "class": "go.TreeModel",
+  "nodeDataArray": [
+{"key":1, "name":"Stella Payne Diaz", "title":"CEO"},
+{"key":2, "name":"Luke Warm", "title":"VP Marketing/Sales", "parent":1},
+{"key":3, "name":"Meg Meehan Hoffa", "title":"Sales", "parent":2},
+{"key":4, "name":"Peggy Flaming", "title":"VP Engineering", "parent":1},
+{"key":5, "name":"Saul Wellingood", "title":"Manufacturing", "parent":4},
+{"key":6, "name":"Al Ligori", "title":"Marketing", "parent":2},
+{"key":7, "name":"Dot Stubadd", "title":"Sales Rep", "parent":3},
+{"key":8, "name":"Les Ismore", "title":"Project Mgr", "parent":5},
+{"key":9, "name":"April Lynn Parris", "title":"Events Mgr", "parent":6},
+{"key":10, "name":"Xavier Breath", "title":"Engineering", "parent":4},
+{"key":11, "name":"Anita Hammer", "title":"Process", "parent":5},
+{"key":12, "name":"Billy Aiken", "title":"Software", "parent":10},
+{"key":13, "name":"Stan Wellback", "title":"Testing", "parent":10},
+{"key":14, "name":"Marge Innovera", "title":"Hardware", "parent":10},
+{"key":15, "name":"Evan Elpus", "title":"Quality", "parent":5},
+{"key":16, "name":"Lotta B. Essen", "title":"Sales Rep", "parent":3}
+ ]
+}
+    </textarea>
+                </div>
+            </div>
+        </div>
+        <!-- * * * * * * * * * * * * * -->
+        <!--  End of GoJS sample code  -->
+    </div>
+</body>
+<!--  This script is part of the gojs.net website, and is not needed to run the sample -->
+<script src="assets/js/goSamples.js"></script>
+
+</html>
